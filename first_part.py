@@ -50,4 +50,17 @@ def entero_a_romano(numero):
         digitos[ix] = digitos[ix] + "0" * longitud
         ix += 1
 
-  
+  #procesamos millares
+    traduccion = ""
+    ix = 0
+    for componente in componentes:
+        for cifra, simbolo in componente:
+            if str(cifra) == digitos[ix]:
+                traduccion += simbolo
+                break
+        ix += 1
+
+    return traduccion
+
+
+entero_a_romano(336)
